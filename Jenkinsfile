@@ -23,7 +23,7 @@ pipeline {
                 echo 'Hello, '
 		echo "${env.is_projmast_required}"
 		    echo "---------"
-				sh '''
+				sh """
 
 
 				if [ "no" = "yes" ]; then
@@ -32,7 +32,7 @@ pipeline {
 				  pwd
                                   echo "${env.is_projmast_required}"
 				fi
-			'''
+			"""
             }
         }
     }
