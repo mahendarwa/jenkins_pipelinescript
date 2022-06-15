@@ -5,7 +5,14 @@ pipeline {
 //             agent { docker 'maven:3.8.1-adoptopenjdk-11' }
             steps {
                 echo 'Hello, Maven'
-//                 sh 'sudo docker --version'
+//              sh 'sudo docker --version'
+                sh '''
+                 echo "Executing Tests"
+                 URL=`curl -s "http://localhost:4040/api/tunnels/command_line" | jq -r '.public_url'`
+                 echo $URL
+                 RESULT=`curl -sPOST "https://api.ghostinspector.com/v1/suites/[redacted]/execute/?apiKey=[redacted]&startUrl=$URL" | jq -r '.code'`
+                 echo $RESULT
+      '''
             }
         }
         stage('Example Test') {
