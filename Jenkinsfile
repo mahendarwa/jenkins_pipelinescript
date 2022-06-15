@@ -21,10 +21,10 @@ pipeline {
         stage('Script configuration') {
             steps {
                 echo 'Hello, '
-				'''
+				sh '''
 
 
-				if [ ${env.is_projmast_required} = "yes" ]; then
+				if [ "no" = "yes" ]; then
 				  pwd
 				else
 				  pwd
