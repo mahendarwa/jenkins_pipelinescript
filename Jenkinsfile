@@ -21,6 +21,8 @@ pipeline {
         stage('Script configuration') {
             steps {
                 echo 'Hello, '
+		echo "${env.is_projmast_required}"
+		    echo "---------"
 				sh '''
 
 
@@ -28,7 +30,7 @@ pipeline {
 				  pwd
 				else
 				  pwd
-                                  echo "else"
+                                  echo "${env.is_projmast_required}"
 				fi
 			'''
             }
