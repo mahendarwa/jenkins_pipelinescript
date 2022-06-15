@@ -24,7 +24,7 @@ pipeline {
 				sh '''
 
 
-				if [ "No" = "yes" ]; then
+				if [ ${env.is_projmast_required} = "yes" ]; then
 				  pwd
 				else
 				  pwd
