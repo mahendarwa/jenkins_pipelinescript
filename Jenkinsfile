@@ -12,7 +12,7 @@ pipeline {
 //              sh 'sudo docker --version'
                 sh '''
                  echo "Executing Tests"
-//                  URL= 'asdf' //`curl -s "http://localhost:4040/api/tunnels/command_line" | jq -r '.public_url'`
+//                  URL= 'asdf' //`curl -s "http://localhost:4040/api/tunnels/command_line" jq -r '.public_url'`
 //                  echo $URL
                  RESULT= 'test'
                  echo $RESULT
