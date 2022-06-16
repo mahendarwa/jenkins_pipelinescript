@@ -10,12 +10,12 @@ pipeline {
                 echo "${env.username}"
                 echo 'Hello, Maven'
 //              sh 'sudo docker --version'
-                sh '''
+                sh """
                  echo "Executing Tests"
 
                  RESULT= 'test'
                  echo $RESULT
-         '''
+         """
             }
         }
         stage('Example Test') {
