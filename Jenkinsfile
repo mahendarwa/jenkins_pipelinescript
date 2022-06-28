@@ -22,7 +22,8 @@ pipeline {
 			b=20
 
 			#Check whether they are equal
-			if [ $a == $b ]
+			echo "checking name value below in if else"
+			if [ ${name} == $b ]
 			then
 			    echo "a is equal to b"
 			fi
