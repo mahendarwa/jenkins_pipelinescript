@@ -17,7 +17,7 @@ pipeline {
                 echo "......Finished checking out the code.........."
 		sh ''' 
 			echo "testing shell script"
-			sh jen.sh
+			sh jen.sh ${name}
 		
 		'''
 
