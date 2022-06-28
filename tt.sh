@@ -1,3 +1,4 @@
-#!/bin/sh
-env=$1
-echo "$env"
+#!/bin/bash
+name=$1
+echo "your name is $name"
+
