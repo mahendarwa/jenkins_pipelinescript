@@ -17,7 +17,9 @@ pipeline {
                 echo "......Finished checking out the code.........."
 		sh ''' 
 			echo "testing shell script"
-			jen.sh
+			pwd
+			ls
+			#jen.sh
 		
 		'''
 
