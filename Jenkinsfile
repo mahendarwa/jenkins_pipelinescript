@@ -15,6 +15,10 @@ pipeline {
         stage('Source Code Checkout') {
             steps {
                 echo "......Finished checking out the code.........."
+		sh ''' 
+			echo "testing shell script"
+		
+		'''
 
             }
         }
@@ -24,8 +28,6 @@ pipeline {
 		echo "${env.is_projmast_required}"
 		    echo "---------"
 				sh """
-
-
 				if [ "no" = "yes" ]; then
 				  pwd
 				else
