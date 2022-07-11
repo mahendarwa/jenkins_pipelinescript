@@ -50,6 +50,17 @@ pipeline {
 
             }
         }
+	stage('test3') {
+	    steps {
+		script {
+		    if (env.JOB_NAME == 'jenshel') {
+			echo 'exueint deploy'
+		    } else {
+			echo 'I execute elsewhere'
+		    }
+		}
+	    }
+	}
         stage('Script configuration') {
             steps {
                 echo 'Hello, '
