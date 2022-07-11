@@ -12,6 +12,19 @@ pipeline {
 	
 	}
     stages {
+	stage ('Test Stage') {
+            \\agent { label 'csp_dev' }
+
+            steps {
+                echo "Test Steps"
+                echo "Jenkins URL: ${env.JENKINS_URL}"
+                echo "Job Name: ${env.JOB_NAME}"
+                echo "Node Name: ${env.NODE_NAME}"
+                echo "Build ID: ${env.BUILD_ID}"
+                echo "Build #: ${env.BUILD_NUMBER}"
+                echo 'Build Version and Name: $params.CASE_BUILD_VERSION_AND_NAME'
+            }
+        }
         stage('Source Code Checkout') {
             steps {
                 echo "......Finished checking out the code.........."
