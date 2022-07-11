@@ -13,7 +13,6 @@ pipeline {
 	}
     stages {
 	stage ('Test Stage') {
-            \\agent { label 'csp_dev' }
 
             steps {
                 echo "Test Steps"
