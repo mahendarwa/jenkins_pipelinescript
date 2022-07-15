@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+  stages {
+    stage ("checking the varaible from glable cred") {
+      steps{
+      withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'my_id_1',
+							usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+              echo "${PASSWORD}, ${USERNAME}"
+              }
+      }
+      }
+    stage {
+      steps {
+        git branch: 'main', credentialsId: 'git_id', url: 'https://github.com/mahendarwa/jenkins_pipelinescript.git'
+      }
+    
+    
+    
+    }
+    }
+  
+}
