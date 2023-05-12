@@ -1,15 +1,14 @@
 provider "aws" {
   region = local.region
-  profile =  "AWSAdministratorAccess-522138564012"
 }
 
 data "aws_availability_zones" "available" {}
 
 locals {
   name   = basename(path.cwd)
-  region = "us-east-1"
+  region = "us-west-2"
 
-  vpc_cidr = "172.25.126.0/23"
+  vpc_cidr = "10.0.0.0/16"
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
 
   tags = {
@@ -28,7 +27,7 @@ module "eks" {
   version = "~> 19.12"
 
   cluster_name    = local.name
-  cluster_version = "1.25"
+  cluster_version = "1.24"
 
   # EKS Addons
   cluster_addons = {
